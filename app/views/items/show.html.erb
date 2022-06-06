@@ -1,10 +1,13 @@
-<h1><%= @item.title %></h1>
-<div class="">
-  <div class="">
-    <h2 class=""><%= @item.title %></h2>
-    <p> Description : <%= @item.description %></p>
-    <p> Prix : <%= @item.price %>€</p>
+<div class="jumbotron-show">
+  <h1>DETAILS DU PRODUIT</h1>
+</div>
+<div class="product-details-section">
     <img src="<%= @item.img_url %>" 
-                alt="img cat" class="" style="width: 150px;">
-  </div>
+                alt="img cat" class="product-details-img">
+    <div class="product-details-text">
+      <h1 class=""><%= @item.title %></h1>
+      <p> Description : <%= @item.description %></p>
+      <p> Prix : <%= @item.price %>€</p>
+      <button class="product-btn">Ajouter au panier</button>
+    </div>
 </div>

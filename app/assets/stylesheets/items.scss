@@ -7,15 +7,124 @@ body {
     padding: 0;
 }
 
+// INDEX //
+
 .jumbotron {
-    margin-bottom: 4em;
-    height: 20em;
+    margin-bottom: 2em;
+    height: 35em;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(assets/images/produits_kittens.png);
+    background-color: rgb(230, 71, 71);
+    background-image: url('assets/images/produits_kittens.jpg') no-repeat;
+    background-size: cover;
+
 }
 
 .jumbotron h1 {
     font-size: 3rem;
+}
+
+.products-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+
+.products-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+    width: 20em;
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid rgb(133, 133, 133);
+    margin-bottom: 4em;
+    border-radius: 15px;
+}
+
+.kitten-img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.product-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.products-section button {
+    margin-top: 2em;
+    padding: 0.7em 2em 0.7em 2em;
+    background-color: rgb(230, 71, 71);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    align-self: center;
+}
+
+.products-section button:hover {
+    background-color: #666;
+}
+
+.product-btn {
+    text-decoration: none;
+    color: white;
+}
+
+// INDEX END //
+
+// SHOW //
+
+.jumbotron-show {
+    margin-bottom: 2em;
+    height: 17em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 71, 71);
+}
+
+.product-details-section {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-details-img {
+    width: 30%;
+    border-radius: 15px;
+    margin-right: 2em;
+}
+
+.product-details-text {
+    width: 30em;
+    margin-top: 6em;
+}
+
+.product-details-section button {
+    margin-top: 2em;
+    padding: 0.7em 2em 0.7em 2em;
+    background-color: rgb(230, 71, 71);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 14px;
+    align-self: center;
+}
+
+.product-details-section button:hover {
+    background-color: #666;
 }
