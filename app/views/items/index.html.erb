@@ -1,12 +1,19 @@
-<h1>Les produits</h1>
+<!-- JUMBOTRON -->
+<div class="jumbotron">
+  <h1>NOS PRODUITS</h1>
+</div>
+<!-- JUMBOTRON END -->
+
+<!-- PRODUCT CARDS -->
 <% @items.each do |item| %>
   <div>
     <img src="<%= item.img_url %>" 
                 alt="img cat" class="" style="width: 150px;">
     <h4><%= item.title %></h4>
-    <h5><%= item.price %></h5>
+    <h5><%= item.price %>€</h5>
     <div class="col">
       <p class="text-decoration-none"><%= link_to "Plus de détails", item_path(item), class: "btn btn-info" %></p>
     </div>
   </div>
 <% end %>
+<!-- PRODUCT CARDS END -->

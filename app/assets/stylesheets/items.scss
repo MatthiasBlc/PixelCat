@@ -1,3 +1,21 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.jumbotron {
+    margin-bottom: 4em;
+    height: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(assets/images/produits_kittens.png);
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+}
