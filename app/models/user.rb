@@ -10,5 +10,5 @@ class User < ApplicationRecord
   validates :zip_code, presence: true
   validates :city, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Veuillez saisir un email valide s'il vous plaît." }
-  validates :encrypted_password, presence: true, lenght: { minimum: 6 }
+  validates :encrypted_password, presence: true, length: { minimum: 6 }
 end
