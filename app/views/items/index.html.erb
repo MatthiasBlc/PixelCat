@@ -6,7 +6,7 @@
     <h4><%= item.title %></h4>
     <h5><%= item.price %></h5>
     <div class="col">
-      <p class="text-decoration-none"><%= link_to "Plus de détails", event_path(item), class: "btn btn-info" %></p>
+      <p class="text-decoration-none"><%= link_to "Plus de détails", item_path(item), class: "btn btn-info" %></p>
     </div>
   </div>
 <% end %>

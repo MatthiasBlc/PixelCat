@@ -17,4 +17,3 @@ Item.destroy_all
         price: Faker::Number.decimal(l_digits: 2),
        img_url: Faker::LoremFlickr.image(size: "320x240", search_terms: ['kitten']))
 end
-
