@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+Item.destroy_all
 
 
 #10.times do
@@ -13,6 +13,10 @@ require 'faker'
 #end
 
 20.times do
-    item = Item.create!(title: Faker::Artist.name, description: Faker::Creature::Cat.breed, price: rand(1..250), img_url: Faker::LoremFlickr.unique.image(size: "320x240", search_terms: ['kitten'])
+    item = Item.create(
+        title: Faker::Artist.unique.name,
+        description: Faker::Creature::Cat.breed,
+        price: Faker::Number.decimal(l_digits: 2),
+       img_url: Faker::LoremFlickr.image(size: "320x240", search_terms: ['kitten']))
 end
 
