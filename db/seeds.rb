@@ -8,9 +8,7 @@
 Item.destroy_all
 
 
-#10.times do
-#user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, adress_1: Faker::Address.street_address, adress_2: Faker::Address.secondary_address, postal_code: Faker::Address.zip_code, city: Faker::Address.city, email: Faker::Internet.email, password_encrypted: Faker::Internet.password)
-#end
+
 
 20.times do
     item = Item.create(
