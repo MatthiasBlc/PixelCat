@@ -180,6 +180,7 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: auto;
     margin-top: 2em;
 }
@@ -188,5 +189,6 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding-bottom: 4em;
 }
