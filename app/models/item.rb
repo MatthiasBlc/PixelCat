@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :cart 
+  has_many :carts
 
   validates :title, presence: true, uniqueness: true, length: { minimum: 3 }
   validates :description, presence: true, length: { minimum: 10 }
