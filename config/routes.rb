@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'carts/index'
+  get 'carts/show'
   root to: 'items#index'
 
   devise_for :users
