@@ -3,36 +3,38 @@
 
 <div class="form-section mb-5 d-flex justify-content-center">
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="field">
-        <%= f.label "Prénom" %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "Prénom", class: "form-field" %>
-      </div>
-      <div class="field">
-        <%= f.label "Nom" %><br />
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom", class: "form-field" %>
-      </div>
-      <div class="field">
-        <%= f.label "Adresse 1" %><br />
-        <%= f.text_field :address_1, autofocus: true, autocomplete: "Adresse", class: "form-field" %>
-      </div>
-       <div class="field">
-        <%= f.label "Adresse 2" %><br />
-        <%= f.text_field :address_2, autofocus: true, autocomplete: "Adresse", class: "form-field" %>
-      </div>
-      <div class="field">
-        <%= f.label "Ville" %><br />
-        <%= f.text_field :city, autofocus: true, autocomplete: "Ville", class: "form-field" %>
-      </div>
-      <div class="field">
-        <%= f.label "Code Postal" %><br />
-        <%= f.text_field :zip_code, autofocus: true, autocomplete: "Code Postal", class: "form-field" %>
-      </div>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field"  %>
-      </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+      <%# <div class="field"> %>
+        <%# <%= f.label :Prénom %><br /> %>
+        <%# <%= f.text_field :first_name, autofocus: true, autocomplete: "Prénom", class: "form-field" %> %>
+      <%# </div> %>
+      
+      <%# <div class="field"> %>
+        <%# <%= f.label :Nom %><br /> %>
+        <%# <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom", class: "form-field" %> %>
+      <%# </div> %>
+      <%# <div class="field"> %>
+        <%# <%= f.label :Adresse %><br /> %>
+        <%# <%= f.text_field :address_1, autofocus: true, autocomplete: "Adresse", class: "form-field" %> %>
+      <%# </div> %>
+       <%# <div class="field"> %>
+        <%# <%= f.label :Adresse %><br /> %>
+        <%# <%= f.text_field :address_2, autofocus: true, autocomplete: "Adresse", class: "form-field" %> %>
+      <%# </div> %>
+      <%# <div class="field"> %>
+        <%# <%= f.label :Ville %><br /> %>
+        <%# <%= f.text_field :city, autofocus: true, autocomplete: "Ville", class: "form-field" %> %>
+      <%# </div> %>
+      <%# <div class="field"> %>
+        <%# <%= f.label :'Code Postal' %><br /> %>
+        <%# <%= f.text_field :zip_code, autofocus: true, autocomplete: "Code Postal", class: "form-field" %> %>
+      <%# </div> %>
+       <div class="field"> 
+         <%= f.label :email %><br /> 
+         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field"  %> 
+       </div> 
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -65,6 +67,6 @@
 <p>Unhappy ? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "form-btn" %></p>
     
 
-    
+   
 </div>
 </div>
