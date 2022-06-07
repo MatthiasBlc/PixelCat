@@ -62,7 +62,8 @@ body {
 
 .products-section button {
     margin-top: 2em;
-    padding: 0.7em 2em 0.7em 2em;
+    padding: 0.5em 1em 0.5em 1em;
+    font_size: 16px;
     background-color: rgb(230, 71, 71);
     border: none;
     border-radius: 15px;
@@ -72,11 +73,30 @@ body {
 
 .products-section button:hover {
     background-color: #666;
+    color: white;
 }
 
 .product-btn {
     text-decoration: none;
     color: white;
+}
+
+.section-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-i {
+    background-color: transparent !important;
+}
+
+.section-btn i {
+    color: rgb(230, 71, 71);
+    font-size: 1.5em;
+}
+
+.section-btn i:hover {
+    color:#666
 }
 
 /* INDEX END */
@@ -114,19 +134,18 @@ body {
 
 .show-button {
     margin-top: 1em;
-    padding: 0.7em 2em 0.7em 2em;
+    padding: 0.5em 1em 0.5em 1em;
     background-color: rgb(230, 71, 71);
     border: none;
     border-radius: 15px;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     align-self: center;
 }
 
 .show-button:hover {
     background-color: #666;
 }
-
 /* NAVBAR */
 .uppercase {
     text-transform: uppercase;
