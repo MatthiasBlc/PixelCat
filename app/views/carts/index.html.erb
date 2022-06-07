@@ -19,3 +19,5 @@
   <% end %>
 <% end %>
 <p>total = <%= @totalcart%>€ </p>
+
+<%= button_to 'Passer commande', _path, remote: true, params: {item_id: @item.id} ,method: :post %>
