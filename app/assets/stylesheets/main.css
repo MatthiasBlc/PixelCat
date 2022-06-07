@@ -180,6 +180,7 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: auto;
     margin-top: 2em;
 }
@@ -188,5 +189,56 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding-bottom: 4em;
+}
+
+/* FOOTER END */
+
+/* FORMS */
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3em;
+}
+
+.form-field {
+    width: 16em;
+    margin-bottom: 1em;
+    border-radius: 7px;
+    border: 1px solid;
+}
+
+.form-field:hover {
+    border: 1px solid rgb(230, 71, 71);
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 1em;
+}
+
+.form-btn {
+    padding: 0.2em 1.5em 0.2em 1.5em;
+    background-color: rgb(230, 71, 71);
+    border: none;
+    border-radius: 15px;
+    color: white;
+}
+
+.form-btn:hover {
+    background-color: #666;
+}
+
+.actions2-links {
+    width: 16em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: row;
+    justify-content: space-between;
+
 }
