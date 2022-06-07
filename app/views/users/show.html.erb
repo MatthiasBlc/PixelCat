@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center mt-5 mb-5">
+<div class="card" style="width: 50rem;">
+  <img src="" class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 class="card-title text-center">Ton Profil</h5>
+    
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Prénom : <%= current_user.first_name %></li>
+    <li class="list-group-item">Nom : <%= current_user.last_name %></li>
+    <li class="list-group-item">Email : <%= current_user.email %></li>
+    <li class="list-group-item">Adresse : <%= current_user.address_1 %></li>
+    <li class="list-group-item">Ville : <%= current_user.city %></li>
+    <li class="list-group-item">Code Postal : <%= current_user.zip_code %></li>
+  </ul>
+  <div class="card-body mx-auto">
+    <%= link_to "Modifier mon profil", edit_user_registration_path, class:"form-btn" %>
+    <%= link_to "Voir mes commandes", edit_user_registration_path, class:"form-btn ml" %>
+   
+  </div>
+</div>
+</div>

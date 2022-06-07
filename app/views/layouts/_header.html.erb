@@ -12,7 +12,7 @@
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
   <% if user_signed_in? %>
-    <%= link_to "Mon profil", new_user_session_path, class: " uppercase dropdown-item" %>
+    <%= link_to "Mon profil", user_path(current_user.id), class: " uppercase dropdown-item" %>
     <%= link_to "Mes commandes", new_user_session_path, class: " uppercase dropdown-item" %>
     <%= link_to "Se déconnecter", destroy_user_session_path, class: " uppercase dropdown-item" %>
     <% else %>
