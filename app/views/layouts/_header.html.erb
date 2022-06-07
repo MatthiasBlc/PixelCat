@@ -5,7 +5,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <%= link_to "Mon panier", new_user_session_path, class: "nav-link uppercase" %>
+                        <%= link_to "Mon panier", carts_path, class: "nav-link uppercase" %>
                         <div class="dropdown">
   <button class="btn uppercase dropdown-fx dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Mon compte
@@ -14,7 +14,7 @@
   <% if user_signed_in? %>
     <%= link_to "Mon profil", user_path(current_user.id), class: " uppercase dropdown-item" %>
     <%= link_to "Mes commandes", new_user_session_path, class: " uppercase dropdown-item" %>
-    <%= link_to "Se déconnecter", destroy_user_session_path, class: " uppercase dropdown-item" %>
+    <%= link_to "Se déconnecter",  destroy_user_session_path, class: " uppercase dropdown-item" %>
     <% else %>
     <%= link_to "S'inscrire", new_user_registration_path, class: "uppercase dropdown-item" %>
     <%= link_to "Se connecter", new_user_session_path, class: " uppercase dropdown-item" %>
@@ -29,7 +29,7 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="masthead text-center text-white header-bg-fx ">
+        <%# <header class="masthead text-center text-white header-bg-fx ">
             <div class="masthead-content ">
                 <div class="container px-5 ">
                     <h1 class="masthead-heading mb-0">Bienvenue sur PixelCat</h1>
@@ -39,4 +39,4 @@
             <div class="bg-circle-2 bg-circle"></div>
             <div class="bg-circle-3 bg-circle"></div>
             <div class="bg-circle-4 bg-circle"></div>
-        </header>
+        </header> %>
