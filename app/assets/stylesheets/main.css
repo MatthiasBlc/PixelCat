@@ -5,28 +5,20 @@ body {
     padding: 0;
 }
 
+h5, h6 {
+    color: rgb(29, 29, 29);
+}
+
 /* INDEX */
 .masthead {
     background-color: blue ;
-}
-.jumbotron {
-    margin-bottom: 2em;
-    height: 35em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 71, 71);
-
-}
-
-.jumbotron h1 {
-    font-size: 3rem;
 }
 
 .products-title {
     display: flex;
     justify-content: center;
     margin-bottom: 4em;
+    color: rgb(53, 53, 53);
 }
 
 .products-section {
@@ -63,7 +55,7 @@ body {
 .products-section button {
     margin-top: 2em;
     padding: 0.5em 1em 0.5em 1em;
-    font_size: 16px;
+    font-size: 16px;
     background-color: rgb(230, 71, 71);
     border: none;
     border-radius: 15px;
@@ -78,6 +70,10 @@ body {
 
 .product-btn {
     text-decoration: none;
+    color: white;
+}
+
+.product-btn:hover {
     color: white;
 }
 
@@ -97,6 +93,23 @@ body {
 
 .section-btn i:hover {
     color:#666
+}
+
+.add-button-index {
+
+    margin-top: 2em;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 16px;
+    background-color: white;
+    border: solid 1px rgb(230, 71, 71);
+    border-radius: 15px;
+    color: rgb(230, 71, 71);
+    align-self: center;
+}
+
+.add-button-index:hover {
+    border: solid 1px #666;
+    color: #666;
 }
 
 /* INDEX END */

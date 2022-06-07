@@ -1,9 +1,18 @@
 <!-- JUMBOTRON -->
-<div class="jumbotron">
-  <h1>PIXEL CAT</h1>
-</div>
+<header class="masthead text-center text-white header-bg-fx ">
+   <div class="masthead-content ">
+       <div class="container px-5 ">
+           <h1 class="masthead-heading mb-0">Bienvenue sur PixelCat</h1>
+           <p class="text-center"> Un site internet chat-leureux</p>
+       </div>
+   </div>
+   <div class="bg-circle-1 bg-circle"></div>
+   <div class="bg-circle-2 bg-circle"></div>
+   <div class="bg-circle-3 bg-circle"></div>
+   <div class="bg-circle-4 bg-circle"></div>
+</header>
 <!-- JUMBOTRON END -->
-<div class="products-title"><h2>TOUS NOS PRODUITS :</h2></div>
+<div class="products-title mt-4"><h2>TOUS NOS PRODUITS :</h2></div>
 <!-- PRODUCT CARDS -->
 <div class="products-section">
   <% @items.each do |item| %>
@@ -16,10 +25,10 @@
         </div>
         <div class="section-btn">
              <button><%= link_to "Voir plus", item_path(item), class: "product-btn" %></button>
-             <%= button_to 'Ajouter au panier', carts_path, remote: true, params: {item_id: item.id} ,method: :post, class: "show-button" %>
-            <%= button_tag( :class => "btn-i") do %>
+             <%= button_to 'Ajouter au panier', carts_path, remote: true, params: {item_id: item.id} ,method: :post, class: "add-button-index" %>
+            <!-- <%= button_tag( :class => "btn-i") do %>
             <i class="fa-solid fa-cart-shopping"></i>
-            <% end %>
+            <% end %> -->
         </div>
     </div>
   <% end %>
