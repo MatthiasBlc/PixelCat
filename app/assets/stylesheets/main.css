@@ -124,3 +124,51 @@ body {
 .product-details-section button:hover {
     background-color: #666;
 }
+
+/* FOOTER */
+footer {
+    background-color: rgb(29, 29, 29)
+}
+
+#paw {
+    transform: rotate(30deg);
+}
+
+footer-copyright {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+
+footer hr {
+    color: white;
+    width: 80%;
+    margin: auto;
+}
+
+footer p {
+    color: white;
+    font-size: 12px;
+}
+
+.fa-brands {
+    font-size: 1.5em;
+    color: white;
+}
+
+.socials {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 4em;
+}
