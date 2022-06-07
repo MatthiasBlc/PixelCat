@@ -274,3 +274,44 @@ footer p {
     justify-content: space-between;
 
 }
+
+/* FORMS END */
+
+/* SHOW PANIER */
+
+.cart-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hr-cart {
+    width: 80%;
+
+}
+
+.col1-cart {
+    width: 25%;
+}
+
+.total-cart {
+    width: 10em;
+    padding: 0.5em;
+    margin-bottom: 3em;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(230, 71, 71);
+}
+
+.kitten-img-cart {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.total-section {
+    width: 80%;
+}
