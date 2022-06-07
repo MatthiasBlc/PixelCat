@@ -142,9 +142,10 @@ color: #666;
 .dropdown-fx:hover {
     color: white;
     border: 1px solid white;
+}
 /* FOOTER */
 footer {
-    background-color: rgb(29, 29, 29)
+    background-color: rgb(29, 29, 29);
 }
 
 #paw {
