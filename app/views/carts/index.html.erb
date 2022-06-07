@@ -1,18 +1,21 @@
 <h1>Carts#index</h1>
 <p>Find me in app/views/carts/index.html.erb</p>
-
-
- <% @carts.each do |cart| %>
-        <% if cart.user_id == current_user.id%>
-          <div class="row d-flex justify-content-end">
-            <div class="col-sm-9 d-flex">
-              <div class="well m-5">
-                <b></b>
-                <p class="text-decoration-none"><%= link_to "#{cart.item.title}", item_path(cart.item), class: "btn btn-info" %></p>
-      <%# erreur potentielle dans le chemin, voir item %>
-              </div>
-            </div>
-          </div>
-        <% else %>
-        <% end %>
-      <% end %>
+<% @totalcart = 0 %>
+<% @carts.each do |cart| %>
+  <% if cart.user_id == current_user.id%>
+    <div class="row d-flex justify-content-end">
+      <div class="col-sm-9 d-flex">
+        <div class="well m-5">
+          <b></b>
+          <p class="text-decoration-none"><%= link_to "#{cart.item.title}", item_path(cart.item), class: "btn btn-info" %></p>
+          <p> <%= cart.item.price %>€ </p>
+          <% @totalcart += cart.item.price %>
+          <a class="btn btn-danger" data-method="DELETE" data-remote="true" href="<%=cart_path(cart.id)%>">Supprimer</a>
+          <%# erreur potentielle dans le chemin, voir item %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+  <% end %>
+<% end %>
+<p>total = <%= @totalcart%>€ </p>
