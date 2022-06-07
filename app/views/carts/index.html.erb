@@ -1,23 +1,41 @@
-<h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
+<header class="masthead text-center text-white header-bg-fx mb-5">
+            <div class="masthead-content">
+                <div class="container px-5 ">
+                    <h1>Mon panier</h1>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+</header>
 <% @totalcart = 0 %>
-<% @carts.each do |cart| %>
-  <% if cart.user_id == current_user.id%>
-    <div class="row d-flex justify-content-end">
-      <div class="col-sm-9 d-flex">
-        <div class="well m-5">
-          <b></b>
-          <p class="text-decoration-none"><%= link_to "#{cart.item.title}", item_path(cart.item), class: "btn btn-info" %></p>
-          <p> <%= cart.item.price %>€ </p>
-          <% @totalcart += cart.item.price %>
-          <a class="btn btn-danger" data-method="DELETE" data-remote="true" href="<%=cart_path(cart.id)%>">Supprimer</a>
-          <%# erreur potentielle dans le chemin, voir item %>
+<div class="container-cart">
+  <div class="cart-product mb-2">
+       <div class="col1-cart"><h6>Produit</h6></div>
+       <div class="col1-cart"><h6>Prix</h6></div>
+       <div class="col1-cart"><p></p></div>
+  </div>
+  <hr class="hr-cart">
+  <% @carts.each do |cart| %>
+  <div class="cart-container mt-4">
+      <% if cart.user_id == current_user.id%>
+        <div class="cart-product mb-4">
+              <img src="<%= cart.item.img_url %>" 
+                      alt="img cat" class="kitten-img-cart">
+              <div class="col1-cart"><p><%= link_to "#{cart.item.title}", item_path(cart.item) %></p></div>
+              <div class="col1-cart"><p> <%= cart.item.price %>€ </p></div>
+              <% @totalcart += cart.item.price %>
+              <div class="col1-cart"><a class="btn btn-danger" data-method="DELETE" data-remote="true" href="<%=cart_path(cart.id)%>">Supprimer</a></div>
+              <%# erreur potentielle dans le chemin, voir item %>
         </div>
-      </div>
-    </div>
-  <% else %>
-  <% end %>
-<% end %>
-<p>total = <%= @totalcart%>€ </p>
-
-<%= button_to 'Passer commande', _path, remote: true, params: {item_id: @item.id} ,method: :post %>
+      <% else %>
+      <% end %>
+    <% end %>
+    
+      <hr class="hr-cart">
+      <div class="total-section"">
+          <h6 class="total-cart text-center">Total = <%= @totalcart%>€ </h6>
+      <div>
+  </div>
+</div>
