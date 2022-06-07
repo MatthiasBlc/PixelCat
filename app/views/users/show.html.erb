@@ -1,0 +1,31 @@
+<div class="d-inline-block mb-4 d-flex align-items-center justify-content-center">
+    <h1 class="text-white text-center border border-white py-3 px-4 position-absolute">Mon Compte</h1>  
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-6">
+      <div class="container">
+      <div class="border mb-5 p-5">
+        <h2 class="h3">Bienvenue sur votre espace personnel</h2>
+        <hr>
+        <!-- <div class="d-inline-block rounded-circle overflow-auto mb-4" style="height: 200px; width: 200px;"></div> -->
+        <h4>Prénom : <%= @user.last_name %></h4>
+        <h4>Nom : <%= @user.first_name %></h4>
+        <h4>Email : <%= @user.email %></h4>
+        <h4>Addresse : <%= @user.address_1 %></h4>
+        <h4>Addresse : <%= @user.address_2 %></h4>
+        <h4>Ville : <%= @user.city %></h4>
+        <h4>Code Postal : <%= @user.zip_code %></h4>
+
+       
+      
+        <%= link_to "Modifier mes informations", edit_user_path, class:"btn btn-outline-primary m-5 " %>
+        </div>
+      </div>
+    </div>
+      
+    
+  </div>
+</div>
