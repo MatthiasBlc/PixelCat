@@ -112,8 +112,8 @@ body {
     margin-top: 6em;
 }
 
-.product-details-section button {
-    margin-top: 2em;
+.show-button {
+    margin-top: 1em;
     padding: 0.7em 2em 0.7em 2em;
     background-color: rgb(230, 71, 71);
     border: none;
@@ -123,7 +123,7 @@ body {
     align-self: center;
 }
 
-.product-details-section button:hover {
+.show-button:hover {
     background-color: #666;
 }
 
