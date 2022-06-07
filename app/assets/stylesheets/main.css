@@ -5,28 +5,20 @@ body {
     padding: 0;
 }
 
+h5, h6 {
+    color: rgb(29, 29, 29);
+}
+
 /* INDEX */
 .masthead {
     background-color: blue ;
-}
-.jumbotron {
-    margin-bottom: 2em;
-    height: 35em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(230, 71, 71);
-
-}
-
-.jumbotron h1 {
-    font-size: 3rem;
 }
 
 .products-title {
     display: flex;
     justify-content: center;
     margin-bottom: 4em;
+    color: rgb(53, 53, 53);
 }
 
 .products-section {
@@ -62,7 +54,8 @@ body {
 
 .products-section button {
     margin-top: 2em;
-    padding: 0.7em 2em 0.7em 2em;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 16px;
     background-color: rgb(230, 71, 71);
     border: none;
     border-radius: 15px;
@@ -72,11 +65,51 @@ body {
 
 .products-section button:hover {
     background-color: #666;
+    color: white;
 }
 
 .product-btn {
     text-decoration: none;
     color: white;
+}
+
+.product-btn:hover {
+    color: white;
+}
+
+.section-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-i {
+    background-color: transparent !important;
+}
+
+.section-btn i {
+    color: rgb(230, 71, 71);
+    font-size: 1.5em;
+}
+
+.section-btn i:hover {
+    color:#666
+}
+
+.add-button-index {
+
+    margin-top: 2em;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 16px;
+    background-color: white;
+    border: solid 1px rgb(230, 71, 71);
+    border-radius: 15px;
+    color: rgb(230, 71, 71);
+    align-self: center;
+}
+
+.add-button-index:hover {
+    border: solid 1px #666;
+    color: #666;
 }
 
 /* INDEX END */
@@ -112,21 +145,20 @@ body {
     margin-top: 6em;
 }
 
-.product-details-section button {
-    margin-top: 2em;
-    padding: 0.7em 2em 0.7em 2em;
+.show-button {
+    margin-top: 1em;
+    padding: 0.5em 1em 0.5em 1em;
     background-color: rgb(230, 71, 71);
     border: none;
     border-radius: 15px;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     align-self: center;
 }
 
-.product-details-section button:hover {
+.show-button:hover {
     background-color: #666;
 }
-
 /* NAVBAR */
 .uppercase {
     text-transform: uppercase;
@@ -180,6 +212,7 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: auto;
     margin-top: 2em;
 }
@@ -188,6 +221,7 @@ footer p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding-bottom: 4em;
 }
 
@@ -228,9 +262,45 @@ footer p {
     font-size: 11px
 }
 
-.add-experience:hover {
-    background: #BA68C8;
-    color: #fff;
-    cursor: pointer;
-    border: solid 1px #BA68C8
+
+
+/* FORMS END */
+
+/* SHOW PANIER */
+
+.cart-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hr-cart {
+    width: 80%;
+
+}
+
+.col1-cart {
+    width: 25%;
+}
+
+.total-cart {
+    width: 10em;
+    padding: 0.5em;
+    margin-bottom: 3em;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(230, 71, 71);
+}
+
+.kitten-img-cart {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.total-section {
+    width: 80%;
 }

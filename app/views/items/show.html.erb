@@ -2,12 +2,14 @@
   <h1>DETAILS DU PRODUIT</h1>
 </div>
 <div class="product-details-section">
-    <img src="<%= @item.img_url %>" 
+  <img src="<%= @item.img_url %>" 
                 alt="img cat" class="product-details-img">
-    <div class="product-details-text">
-      <h1 class=""><%= @item.title %></h1>
-      <p> Description : <%= @item.description %></p>
-      <p> Prix : <%= @item.price %>€</p>
-      <button class="product-btn">Ajouter au panier</button>
-    </div>
+  <div class="product-details-text">
+    <h1 class=""><%= @item.title %></h1>
+    <p> Description : <%= @item.description %></p>
+    <p> Prix : <%= @item.price %>€</p>
+    
+    <%= button_to 'Ajouter au panier', carts_path, remote: true, params: {item_id: @item.id} ,method: :post, class: "show-button" %>
+
+  </div>
 </div>
