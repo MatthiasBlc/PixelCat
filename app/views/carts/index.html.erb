@@ -2,13 +2,14 @@
 <p>Find me in app/views/carts/index.html.erb</p>
 
 
- <% @events.each do |event| %>
-        <% if event.admin_id == current_user.id%>
+ <% @carts.each do |cart| %>
+        <% if cart.user_id == current_user.id%>
           <div class="row d-flex justify-content-end">
             <div class="col-sm-9 d-flex">
               <div class="well m-5">
-                <b><%= event.title %></b>
-                <p class="text-decoration-none"><%= link_to "Voir l'Event", event_path(event), class: "btn btn-info" %></p>
+                <b></b>
+                <p class="text-decoration-none"><%= link_to "#{cart.item.title}", item_path(cart.item), class: "btn btn-info" %></p>
+      <%# erreur potentielle dans le chemin, voir item %>
               </div>
             </div>
           </div>
