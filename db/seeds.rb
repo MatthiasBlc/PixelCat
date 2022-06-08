@@ -69,12 +69,16 @@ descriptions = ['Comment résister à ce pelage tout fluffy?',
                 'J’ai donné ma jeunesse et ma beauté aux hommes ; je donne ma sagesse et mon expérience aux animaux.',
                 'Le temps passé avec un chat n’est jamais perdu.']
 
-20.times do
+20.times do |i|
   selected_description = descriptions.sample
-  Item.create(
-    title: Faker::Artist.unique.name,
-    description: "#{Faker::Creature::Cat.breed} #{selected_description}",
-    price: Faker::Number.decimal(l_digits: 2),
-  )
+  item = Item.create(
+          title: Faker::Artist.unique.name,
+          description: "#{Faker::Creature::Cat.breed} #{selected_description}",
+          price: Faker::Number.decimal(l_digits: 2),
+        )
+
   descriptions.delete(selected_description)
+
+  item.photo.attach(io: File.open("app/assets/images/kittens/kitten#{i}.png"), filename: "kitten#{i}.png")
+  
 end
