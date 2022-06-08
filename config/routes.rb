@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :items, only: %i[index show]
   resources :carts
   resources :orders
+  
 
   # resources :join_table_items_orders_controller
 
