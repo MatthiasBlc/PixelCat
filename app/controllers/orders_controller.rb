@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     @order = Order.create
 
     # @event = Event.find(params[:event_id])
+    @cartlist = params[:cartlist]
     @user = current_user
     @stripe_amount = params[:total_price]
 
@@ -28,26 +29,28 @@ class OrdersController < ApplicationController
 
     if @order.save
 
-
-
       # add cart in jointable customer.id
-
-
-
+      create_in_order
 
       # clear cart
-
-
-
-
+      empty_cart
 
       redirect_to root_path
-      # redirect add cart in jointable customer.id
-
 
     else
       flash.now[:alert] = @order.errors.full_messages
       render 'new'
     end
+  end
+
+  private
+
+  def empty_cart
+    current_user.carts.each do |item|
+      item.destroy
+    end
+  end
+
+  def create_in_order; 
   end
 end
