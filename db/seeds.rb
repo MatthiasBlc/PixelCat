@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'aws-sdk-s3'
+s3 = Aws::S3::Resource.new(region: 'eu-west-3')
+
 Item.destroy_all
 
 images = [
@@ -78,6 +82,10 @@ descriptions = ['Comment résister à ce pelage tout fluffy?',
         )
 
   descriptions.delete(selected_description)
+
+  obj = s3.bucket('pixelcat').object("kitten#{i}.png")
+
+  obj.get(response_target: "app/assets/images/kittens/kitten#{i}.png")
 
   item.photo.attach(io: File.open("app/assets/images/kittens/kitten#{i}.png"), filename: "kitten#{i}.png")
   
