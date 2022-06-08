@@ -1,0 +1,49 @@
+<div class="d-inline-block mb-4 d-flex align-items-center justify-content-center">
+    <h1 class="text-white text-center border border-white py-3 px-4 position-absolute">Mon Compte</h1>  
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-6">
+      <div class="container">
+      <div class="border mb-5 p-5">
+        <h2 class="h3">Ta fiche de profil :</h2>
+        <hr>
+        <!-- <div class="d-inline-block rounded-circle overflow-auto mb-4" style="height: 200px; width: 200px;"></div> -->
+        <ul class="list-group">
+        <li class="list-group-item">
+        Prénom : <%= @user.first_name %>
+        </li>
+        <li class="list-group-item">
+        Nom : <%= @user.first_name %>
+        </li>
+        <li class="list-group-item">
+        Email : <%= @user.email %>
+        </li>
+        <li class="list-group-item">
+        Adresse 1 : <%= @user.address_1 %>
+        </li>
+        <li class="list-group-item">
+        Addresse 2 : <%= @user.address_2 %>
+        </li>
+        <li class="list-group-item">
+        Code Postal : <%= @user.zip_code %>
+        </li>
+        <li class="list-group-item">
+        Ville : <%= @user.city %>
+        </li>
+        
+        </ul>
+    <br>
+    <br>
+       
+      
+        <%= link_to "Modifier mes informations", edit_user_registration_path(current_user.id), class:"form-btn mt-5" %>
+        </div>
+      </div>
+    </div>
+      
+    
+  </div>
+</div>

@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div class="container px-5">
                 <%= link_to 'PixelCat', root_path, class: 'navbar-brand' %>
@@ -12,8 +11,8 @@
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
   <% if user_signed_in? %>
-    <%= link_to "Mon profil", new_user_session_path, class: " uppercase dropdown-item" %>
-    <%= link_to "Mes commandes", new_user_session_path, class: " uppercase dropdown-item" %>
+    <%= link_to "Mon profil", users_show_path(current_user.id), class: " uppercase dropdown-item" %>
+    <%= link_to "Mes commandes", carts_path, class: " uppercase dropdown-item" %>
     <%= link_to "Se déconnecter",  destroy_user_session_path, class: " uppercase dropdown-item" %>
     <% else %>
     <%= link_to "S'inscrire", new_user_registration_path, class: "uppercase dropdown-item" %>
