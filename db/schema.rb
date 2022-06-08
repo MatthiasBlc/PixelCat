@@ -53,11 +53,13 @@ ActiveRecord::Schema.define(version: 2022_06_08_082036) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items_orders", id: false, force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "order_id", null: false
-    t.index ["item_id", "order_id"], name: "index_items_orders_on_item_id_and_order_id"
-    t.index ["order_id", "item_id"], name: "index_items_orders_on_order_id_and_item_id"
+  create_table "join_table_items_orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "order_id"
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_join_table_items_orders_on_item_id"
+    t.index ["order_id"], name: "index_join_table_items_orders_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -92,5 +94,7 @@ ActiveRecord::Schema.define(version: 2022_06_08_082036) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "carts", "items"
   add_foreign_key "carts", "users"
+  add_foreign_key "join_table_items_orders", "items"
+  add_foreign_key "join_table_items_orders", "orders"
   add_foreign_key "orders", "users"
 end
