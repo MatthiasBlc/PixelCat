@@ -4,45 +4,38 @@ class OrdersController < ApplicationController
   def create
     @order = Order.create
 
-    # @event = Event.find(params[:event_id])
     @cartlist = params[:cartlist]
     @user = current_user
     @stripe_amount = params[:total_price]
 
-    # puts "*"*50
- # Ici prévoir d'enregistrer la commande en base 
  begin
   @stripe_amount = 0
   current_user.carts.each do |cart_item|
     @stripe_amount += cart_item.item.price
   end
-   puts "*"*50
-   puts @stripe_amount
-   puts "*"*50
+
 
 
   customer = Stripe::Customer.create({
    email: params[:stripeEmail],
    source: params[:stripeToken],
    })
-  #  puts "*"*50
-  #  puts params[:total_price]
-  #  puts "*"*50
+
    charge = Stripe::Charge.create({
    customer: customer.id,
    amount: (@stripe_amount *100).to_i,
    description: "Achat sur la plateforme PixelCat",
    currency: 'eur',
    })
+   @id_stripe = customer.id
  rescue Stripe::CardError => e
    flash[:error] = e.message
    redirect_to new_order_path
  end
- # Ici prévoir le delete le panier 
-    # puts "*"*50
+
 
     #modifier id_stripe
-    @order = Order.create(id_stripe: 123,
+    @order = Order.create(id_stripe: @id_stripe,
                           user: @user,
                           date: DateTime.now,
                           total_price: @stripe_amount,
