@@ -8,34 +8,29 @@ class OrdersController < ApplicationController
     @user = current_user
     @stripe_amount = params[:total_price]
 
- begin
-  @stripe_amount = 0
-  current_user.carts.each do |cart_item|
-    @stripe_amount += cart_item.item.price
-  end
+    begin
+      @stripe_amount = 0
+      current_user.carts.each do |cart_item|
+        @stripe_amount += cart_item.item.price
+      end
 
+      customer = Stripe::Customer.create({
+                                           email: params[:stripeEmail],
+                                           source: params[:stripeToken]
+                                         })
 
+      charge = Stripe::Charge.create({
+                                       customer: customer.id,
+                                       amount: (@stripe_amount * 100).to_i,
+                                       description: 'Achat sur la plateforme PixelCat',
+                                       currency: 'eur'
+                                     })
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_order_path
+    end
 
-  customer = Stripe::Customer.create({
-   email: params[:stripeEmail],
-   source: params[:stripeToken],
-   })
-
-   charge = Stripe::Charge.create({
-   customer: customer.id,
-   amount: (@stripe_amount *100).to_i,
-   description: "Achat sur la plateforme PixelCat",
-   currency: 'eur',
-   })
-   @id_stripe = customer.id
- rescue Stripe::CardError => e
-   flash[:error] = e.message
-   redirect_to new_order_path
- end
-
-
-    #modifier id_stripe
-    @order = Order.create(id_stripe: @id_stripe,
+    @order = Order.create(id_stripe: customer.id,
                           user: @user,
                           date: DateTime.now,
                           total_price: @stripe_amount,
@@ -70,5 +65,4 @@ class OrdersController < ApplicationController
       cart_item.destroy
     end
   end
-
 end
