@@ -25,14 +25,12 @@ class OrdersController < ApplicationController
                                        description: 'Achat sur la plateforme PixelCat',
                                        currency: 'eur'
                                      })
-      @id_stripe = customer.id
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_order_path
     end
 
-    # modifier id_stripe
-    @order = Order.create(id_stripe: @id_stripe,
+    @order = Order.create(id_stripe: customer.id,
                           user: @user,
                           date: DateTime.now,
                           total_price: @stripe_amount,
