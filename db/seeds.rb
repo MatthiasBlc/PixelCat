@@ -70,14 +70,11 @@ descriptions = ['Comment résister à ce pelage tout fluffy?',
                 'Le temps passé avec un chat n’est jamais perdu.']
 
 20.times do
-  selected_image = images.sample
   selected_description = descriptions.sample
   Item.create(
     title: Faker::Artist.unique.name,
     description: "#{Faker::Creature::Cat.breed} #{selected_description}",
     price: Faker::Number.decimal(l_digits: 2),
-    img_url: selected_image
   )
-  images.delete(selected_image)
   descriptions.delete(selected_description)
 end
