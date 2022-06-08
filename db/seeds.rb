@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'aws-sdk-s3'
+
 s3 = Aws::S3::Resource.new(region: 'eu-west-3')
 
 OrderItem.destroy_all
@@ -46,7 +46,7 @@ descriptions = ['Comment résister à ce pelage tout fluffy?',
 
   descriptions.delete(selected_description)
 
-
-  item.photo.attach(s3.bucket('pixelcat').object("kitten#{i}.png"))
+  obj = s3.bucket('pixelcat').object("kitten#{i}.png")
+  item.photo.attach(obj)
   
 end

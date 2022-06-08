@@ -44,8 +44,7 @@ gem 'stripe'
 gem 'table_print'
 #Other gem
 gem 'dotenv-rails'
-gem "aws-sdk-s3", require: false
-
+gem "aws-sdk-s3"
 
 
 group :development, :test do
