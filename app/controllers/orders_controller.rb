@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
    })
    charge = Stripe::Charge.create({
    customer: customer.id,
-   amount: @stripe_amount,
+   amount: @stripe_amount.to_f,
    description: "Achat sur la plateforme PixelCat",
    currency: 'eur',
    })
