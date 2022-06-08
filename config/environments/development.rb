@@ -11,7 +11,7 @@ Rails.application.configure do
 
   # Mailer
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => 'pixel-cat-pi-install-ma-sezxtr.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'pixel-cat-staging.herokuapp.com' }
 
 
   # Show full error reports.

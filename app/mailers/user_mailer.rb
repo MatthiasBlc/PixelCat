@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url = 'https://pixel-cat-pi-install-ma-sezxtr.herokuapp.com/'
+    @url = 'https://pixel-cat-staging.herokuapp.com/'
     mail(to: @user.email, subject: 'Welcome subject')
   end
 end
