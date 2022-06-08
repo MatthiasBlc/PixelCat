@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   has_many :carts
-  has_many :join_table_items_orders
-  has_many :orders, through: :join_table_items_orders
+  has_many :order_items
+  has_many :orders, through: :order_items
 
   validates :title, presence: true, uniqueness: true, length: { minimum: 3 }
   validates :description, presence: true, length: { minimum: 10 }

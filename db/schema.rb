@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_100919) do
+ActiveRecord::Schema.define(version: 2022_06_08_130317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 2022_06_07_100919) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "join_table_items_orders", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "order_id"
     t.bigint "item_id"
-    t.index ["item_id"], name: "index_join_table_items_orders_on_item_id"
-    t.index ["order_id"], name: "index_join_table_items_orders_on_order_id"
+    t.index ["item_id"], name: "index_order_items_on_item_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_100919) do
 
   add_foreign_key "carts", "items"
   add_foreign_key "carts", "users"
-  add_foreign_key "join_table_items_orders", "items"
-  add_foreign_key "join_table_items_orders", "orders"
+  add_foreign_key "order_items", "items"
+  add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
 end
