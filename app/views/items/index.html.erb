@@ -17,7 +17,7 @@
 <div class="products-section">
   <% @items.each do |item| %>
     <div class="product-card">
-        <img src="<%= item.img_url %>" 
+        <img src="<%= url_for(item.photo) %>" 
                     alt="img cat" class="kitten-img">
         <div class="product-text mt-2">
             <h5><%= item.title %></h5>

@@ -28,7 +28,7 @@
     <div class="cart-container mt-4">
       <% if cart.user_id == current_user.id%>
         <div class="cart-product mb-4">
-          <img src="<%= cart.item.img_url %>" 
+          <img src="<%= url_for(cart.item.photo) %>" 
                       alt="img cat" class="kitten-img-cart">
           <div class="col1-cart">
             <p><%= link_to "#{cart.item.title}", item_path(cart.item) %></p>

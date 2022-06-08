@@ -2,7 +2,7 @@
   <h1>DETAILS DU PRODUIT</h1>
 </div>
 <div class="product-details-section">
-  <img src="<%= @item.img_url %>" 
+  <img src="<%= url_for(@item.photo) %>" 
                 alt="img cat" class="product-details-img">
   <div class="product-details-text">
     <h1 class=""><%= @item.title %></h1>
