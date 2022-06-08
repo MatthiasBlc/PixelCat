@@ -77,20 +77,20 @@ descriptions = ['Comment résister à ce pelage tout fluffy?',
                 'J’ai donné ma jeunesse et ma beauté aux hommes ; je donne ma sagesse et mon expérience aux animaux.',
                 'Le temps passé avec un chat n’est jamais perdu.']
 
-#20.times do |i|
-#  selected_description = descriptions.sample
-#  item = Item.create(
-#          title: Faker::Artist.unique.name,
-#          description: "#{Faker::Creature::Cat.breed} #{selected_description}",
-#          price: Faker::Number.decimal(l_digits: 2),
-#        )
+20.times do |i|
+  selected_description = descriptions.sample
+  item = Item.create(
+          title: Faker::Artist.unique.name,
+          description: "#{Faker::Creature::Cat.breed} #{selected_description}",
+          price: Faker::Number.decimal(l_digits: 2),
+        )
 
-#  descriptions.delete(selected_description)
+  descriptions.delete(selected_description)
 
-#  obj = s3.bucket('pixelcat').object("kitten#{i}.png")
+  obj = s3.bucket('pixelcat').object("kitten#{i}.png")
 
-#  obj.get(response_target: "app/assets/images/kittens/kitten#{i}.png")
+  #obj.get(response_target: "app/assets/images/kittens/kitten#{i}.png")
 
-#  item.photo.attach(io: File.open("app/assets/images/kittens/kitten#{i}.png"), filename: "kitten#{i}.png")
+  item.photo.attach(io: File.open("app/assets/images/kittens/kitten#{i}.png"), filename: "kitten#{i}.png")
   
-#end
+end
