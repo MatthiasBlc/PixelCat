@@ -89,7 +89,7 @@ descriptions = ['Comment résister à ce pelage tout fluffy?',
 
   obj = s3.bucket('pixelcat').object("kitten#{i}.png")
 
-  #obj.get(response_target: "app/assets/images/kittens/kitten#{i}.png")
+  obj.get(response_target: "app/assets/images/kittens/kitten#{i}.png")
 
   item.photo.attach(io: File.open("app/assets/images/kittens/kitten#{i}.png"), filename: "kitten#{i}.png")
   
