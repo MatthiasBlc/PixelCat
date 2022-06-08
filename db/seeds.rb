@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Item.destroy_all
+Cart.destroy_all
+JoinTableItemOrder.destroy_all
+Order.destroy_all
+User.destroy_all
 
 images = [
   'https://images.unsplash.com/photo-1571988840298-3b5301d5109b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80https://unsplash.com/photos/-81lVsfM4gQ',
