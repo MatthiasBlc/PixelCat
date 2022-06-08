@@ -12,13 +12,25 @@ class OrdersController < ApplicationController
     # puts "*"*50
  # Ici prévoir d'enregistrer la commande en base 
  begin
-   customer = Stripe::Customer.create({
+  @stripe_amount = 0
+  current_user.carts.each do |cart_item|
+    @stripe_amount += cart_item.item.price
+  end
+   puts "*"*50
+   puts @stripe_amount
+   puts "*"*50
+
+
+  customer = Stripe::Customer.create({
    email: params[:stripeEmail],
    source: params[:stripeToken],
    })
+  #  puts "*"*50
+  #  puts params[:total_price]
+  #  puts "*"*50
    charge = Stripe::Charge.create({
    customer: customer.id,
-   amount: @stripe_amount.to_f,
+   amount: (@stripe_amount *100).to_i,
    description: "Achat sur la plateforme PixelCat",
    currency: 'eur',
    })
