@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   # get 'carts/index'
   # get 'carts/show'
   root to: 'items#index'
