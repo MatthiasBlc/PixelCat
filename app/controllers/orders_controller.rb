@@ -45,12 +45,16 @@ class OrdersController < ApplicationController
 
   private
 
+ 
   def empty_cart
     current_user.carts.each do |item|
       item.destroy
     end
   end
 
-  def create_in_order; 
+  def create_in_order
+    current_user.carts.each do |item|
+      OrderItem.create(user_id: current_user.id, item_id: item.id)
+    end
   end
 end
