@@ -11,7 +11,7 @@ module Admin
     def authenticate_admin
       if current_user.nil?
         redirect_to root_path
-      elsif current_user.email == 'iris.test@test.fr'
+      elsif current_user.email == 'adminpixcat@yopmail.com'
       else
         redirect_to root_path
       end
