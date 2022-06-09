@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @user.first_name %> merci pour ta commande !</h1>
+    <h1>Salut <%= @user.first_name %>, merci pour ta commande !</h1>
     <p>
-      Pour accéder à ton espace client, connecte-toi <%=link_to('ici', order_url(@order) )%>.
+      Pour accéder à ton espace client, connecte-toi <%=link_to('-> ici <-', order_url(@order) )%>.
     </p>
     <p> À très vite sur pixel-cat.herokuapp.com !
     </p>
