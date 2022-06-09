@@ -1,29 +1,24 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<%= form_tag orders_path do %>
-<article>
-  <% if flash[:error].present? %>
-    <div id="error_explanation">
-      <p><%= flash[:error] %></p>
-    </div>
+<div class="container-pay">
+  <div class="under-container_pay">
+  <%= form_tag orders_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+          <h2>Paiment avec Stripe</h2>
+          <label class="amount">
+            <span class="fs-5">Montant de la commande : <%= params[:total_price] %>€</span>
+          </label>
+      </article>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Achat d'un produit"
+        data-amount= <%= params[:total_price].to_f * 100 %>
+        data-currency= "eur"
+        data-locale="fr">
+      </script>
   <% end %>
-  <label class="amount">
-    <span>Montant de la commande : <%= params[:total_price] %></span>
-  </label>
-</article>
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="Achat d'un produit"
-    data-amount= <%= params[:total_price].to_f * 100 %>
-    data-locale="fr">
-</script>
-<% end %>
+  </div>
+</div>
