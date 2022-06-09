@@ -279,6 +279,10 @@ footer p {
 
 /* SHOW PANIER */
 
+.container-cart {
+    margin-left: 2em;
+}
+
 .cart-product {
     display: flex;
     flex-direction: row;
@@ -298,10 +302,6 @@ footer p {
 .total-cart {
     width: 10em;
     padding: 0.5em;
-    margin-bottom: 3em;
-    margin-top: 3em;
-    margin-left: auto;
-    margin-right: auto;
     border: 2px solid rgb(230, 71, 71);
 }
 
@@ -314,4 +314,52 @@ footer p {
 
 .total-section {
     width: 80%;
+    padding-top: 2em;
+    padding-bottom: 5em;
+    display: flex;
+    justify-content: row;
+    justify-content: flex-end;
+}
+
+.show-button-cart {
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: rgb(230, 71, 71);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    margin-left: 2em;
+    width: 10em;
+    padding: 0.5em;
+
+}
+
+.show-button-cart:hover {
+    background-color: rgb(188, 50, 50);
+}
+
+/* SHOW CART END */ 
+
+/* SHOW STRIPE PAYMENTS */
+
+.container-pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45em;
+}
+
+.stripe-button-el { 
+    margin-left: 5.5em;
+    margin-top: 1em;
+}
+
+.under-container_pay {
+    border: 3px solid rgb(34, 153, 232);
+    border-radius: 15px;
+    padding: 2em;
+}
+
+.under-container_pay h2 {
+    margin-bottom: 0.5em;
 }

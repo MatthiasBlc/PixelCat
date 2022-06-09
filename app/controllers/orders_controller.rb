@@ -1,15 +1,14 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @orders = Order.all
+  end
+
   def new
     @order = Order.new
     @total_price = total_cart_price
-    puts "/" * 200
-    puts @total_price
-    puts "/" * 200
   end
-  
-
 
   def create
     @order = Order.create
@@ -81,7 +80,6 @@ class OrdersController < ApplicationController
     current_user.carts.each do |cart_item|
       @total_price += cart_item.item.price
     end
-    return @total_price
+    @total_price
   end
-
 end
