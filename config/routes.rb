@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :carts
+      resources :items
+      resources :orders
+      resources :order_items
+
+      root to: "users#index"
+    end
+    
   get 'users/show'
   root to: 'items#index'
 

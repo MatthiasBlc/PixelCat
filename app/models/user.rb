@@ -14,7 +14,7 @@ class User < ApplicationRecord
   #validates :zip_code, presence: true
   #validates :city, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Veuillez saisir un email valide s'il vous plaît." }
-  validates :encrypted_password, presence: true, length: { minimum: 6 }
+  validates :encrypted_password, presence: true, format: {with: /\A.*(?=.{10,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*\z/, message: "Votre mot de passe doit contenir au moins, un nombre, une lettre et doit être constitué de 6 à 40 caractères."}
 
 
   after_create :welcome_send
