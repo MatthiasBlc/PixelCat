@@ -36,7 +36,7 @@
           <div class="col1-cart">
             <p> <%= cart.item.price %>€ </p>
           </div>
-          <% @totalcart += cart.item.price %>
+          <% @totalcartdisplay += cart.item.price %>
           <div class="col1-cart">
             <a class="btn btn-danger" data-method="DELETE" data-remote="true" href="<%=cart_path(cart.id)%>">Supprimer</a>
           </div>
