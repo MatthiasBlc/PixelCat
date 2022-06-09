@@ -1,5 +1,9 @@
-      nouvelle commande : <%= @order.id %>
-      client mail :<%= @user.email %>
-      TTV : <%= @order.total_price %>
-      products: 
-        boucle ?
+nouvelle commande : <%= @order.id %>
+client email :<%= @user.email %>
+TTV : <%= @order.total_price %>
+products: 
+<% @order.items.each do |item|%>
+  <%= item.title %>
+  individual price = <%= item.price %> €
+  <hr>
+<% end %>
