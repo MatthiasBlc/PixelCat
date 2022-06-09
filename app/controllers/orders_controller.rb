@@ -61,6 +61,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show 
+    @order = Order.find(params[:id])
+    @items = @order.items
+  end
+
   private
 
   def create_in_order
