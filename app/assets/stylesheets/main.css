@@ -363,3 +363,28 @@ footer p {
 .under-container_pay h2 {
     margin-bottom: 0.5em;
 }
+
+/* SHOW STRIPE PAYMENT END */
+
+/* INDEX ORDERS */
+
+.order1 {
+    width: 55%;
+    display: flex;
+    justify-content: row;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.order-section {
+    padding-left: 2em;
+    padding-bottom: 5em;
+}
+
+.hr-order {
+    width: 56%;
+    margin-bottom: 1em;
+    color: #666
+}
+
+/* INDEX ORDERS END */
