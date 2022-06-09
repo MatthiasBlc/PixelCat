@@ -9,25 +9,25 @@
   <div class="bg-circle-3 bg-circle"></div>
   <div class="bg-circle-4 bg-circle"></div>
 </header>
-<% @totalcart = 0 %>
+<% @totalcartdisplay = 0 %>
 <% @cartlist = [] %>
 <div class="container-cart">
   <div class="cart-product mb-2">
-      <div class="col1-cart">
-        <h6>Produit</h6>
-      </div>
-      <div class="col1-cart">
-        <h6>Prix</h6>
-      </div>
-      <div class="col1-cart">
-        <p></p>
-      </div>
+    <div class="col1-cart">
+      <h6>Produit</h6>
+    </div>
+    <div class="col1-cart">
+      <h6>Prix</h6>
+    </div>
+    <div class="col1-cart">
+      <p></p>
+    </div>
   </div>
   <hr class="hr-cart">
-    <div class="cart-container mt-4">
-      <% @carts.each do |cart| %>
+  <div class="cart-container mt-4">
+    <% @carts.each do |cart| %>
       <% if cart.user_id == current_user.id%>
-        <div class="cart-product mb-4">
+        <div id='cart_<%= cart.id %>' class="cart-product mb-4">
           <img src="<%= url_for(cart.item.photo) %>" 
                       alt="img cat" class="kitten-img-cart">
           <div class="col1-cart">
@@ -36,19 +36,19 @@
           <div class="col1-cart">
             <p> <%= cart.item.price %>€ </p>
           </div>
-          <% @totalcart += cart.item.price %>
+          <% @totalcartdisplay += cart.item.price %>
           <div class="col1-cart">
             <a class="btn btn-danger" data-method="DELETE" data-remote="true" href="<%=cart_path(cart.id)%>">Supprimer</a>
           </div>
           <% @cartlist << cart.item.id %>
-          </div>
-          <% else %>
-          <% end %>
-        <% end %>
-    </div>
+        </div>
+      <% else %>
+      <% end %>
+    <% end %>
+  </div>
   <hr class="hr-cart">
-    <div class="total-section">
-      <h6 class="total-cart text-center">Total = <%= @totalcart%>€ </h6>
-      <%= button_to 'Valider le panier', new_order_path, params: {cartlist: @cartlist, total_price: @totalcart} ,method: :get, class: "show-button-cart" %>
-    </div>
+  <div class="total-section">
+    <h6 class="total-cart text-center">Total = <span id= 'totalcartprice'><%= @totalcartdisplay %></span>€ </h6>
+    <%= button_to 'Valider le panier', new_order_path, params: {cartlist: @cartlist} ,method: :get, class: "show-button-cart" %>
+  </div>
 </div>

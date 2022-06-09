@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :items, only: %i[index show], path: 'article'
   end
 
+
   resources :carts, path: 'mon_panier'
 
   scope(path_names: {show: 'ma_commande', new: 'paiement', create: 'paiement_valide'}) do
