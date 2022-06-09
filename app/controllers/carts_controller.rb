@@ -10,7 +10,6 @@ class CartsController < ApplicationController
   end
 
   def create
-
     @item = Item.find(params[:item_id])
     @cart = Cart.create(user_id: current_user.id, item_id: @item.id)
 

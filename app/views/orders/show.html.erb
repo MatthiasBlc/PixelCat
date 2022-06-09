@@ -1,2 +1,29 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<header class="masthead text-center text-white header-bg-fx mb-5">
+  <div class="masthead-content">
+    <div class="container px-5 ">
+      <h1>Commande n°<%= @order.id %></h1>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
+<h4 class="text-center mb-5">Voici le détail de votre commande :</h4>
+
+<div class="order-details">
+
+    <% @items.each do |item| %>
+        <div class="recap-container">
+            <div class="icon-title-dl">
+                <i class="fa-solid fa-download fs-5"></i>
+                <span class="fs-5"><%= item.title %> :</span>
+            </div>
+            <div><%= image_tag item.photo, class: "img-order-show" %></div>
+        </div>
+    <% end %>
+
+</div>
+
+<div class="div-back"><p id="back-orders" class="text-center fs-5">Retour vers mes commandes</p></div>
+

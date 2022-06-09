@@ -398,3 +398,57 @@ footer p {
 
 
 /* INDEX ORDERS END */
+/* INDEX ORDERS END */
+
+.img-order-show {
+    width: 20em;
+    height: 20em;
+    object-fit: cover;
+    margin-bottom: 2em;
+}
+
+.order-details {
+    margin-bottom: 2em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.icon-title-dl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.5em;
+
+}
+
+.icon-title-dl i {
+    margin-right: 0.5em;
+    color:rgb(69, 69, 69)
+}
+
+.icon-title-dl i:hover {
+    color: rgb(188, 50, 50);
+    cursor: pointer;
+}
+
+#back-orders {
+    width: 10em;
+    border: 2px solid rgb(188, 50, 50);
+    border-radius: 10px;
+    margin-bottom: 3em;
+    
+}
+
+.div-back {
+    display: flex;
+    justify-content: center;
+}
+
+#back-orders:hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 220);
+}

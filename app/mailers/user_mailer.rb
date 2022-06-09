@@ -8,6 +8,7 @@ class UserMailer < ApplicationMailer
   end
 
   def confirmation_email(order)
+    @order = order
     @user = order.user
     @url = 'https://pixel-cat.herokuapp.com/'
     mail(to: @user.email, subject: 'Your order')

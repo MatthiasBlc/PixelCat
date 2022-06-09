@@ -1,24 +1,27 @@
-# README
+# Pixel-cat market place
+https://pixel-cat.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Features](#features)
+* [Sources](#sources)
 
-Things you may want to cover:
+## General info
+This project is a market place for selling some kittens pictures.
+	
+## Technologies
+Project is created with:
+* [Ruby 2.7.4](https://ruby-doc.org/core-2.7.4/)
+* [Rails 5.2.7.1 /5.2.3](https://api.rubyonrails.org/v5.2.3/)
+	
+## Features
+* A visitor can see the list of picture and more details on each ones.
+* He can create an account or authenticate himself.
+* As an authenticate user he cans add product to his cart and checkout.
+* He can also see the list of his orders.
+* Emails are sent at the account creation and the cart checkout.
+* An admin can access to a specific dedicated dashboard.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Sources
+This app is created through the [The Hacking Project](https://www.thehackingproject.org) bootcamp and made by [Sngm4](https://github.com/Sngm4), [Lxvia](https://github.com/Lxvia), [Fix34](https://github.com/Fix34) and [MatthiasBlc](https://github.com/MatthiasBlc).
