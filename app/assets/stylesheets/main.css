@@ -387,6 +387,17 @@ footer p {
     color: #666
 }
 
+.fa-eye {
+    margin-left: 0.3em;
+    color: rgb(79, 79, 79)
+}
+
+.fa-eye:hover {
+    color: rgb(188, 50, 50)
+}
+
+
+/* INDEX ORDERS END */
 /* INDEX ORDERS END */
 
 .img-order-show {
@@ -422,4 +433,22 @@ footer p {
 .icon-title-dl i:hover {
     color: rgb(188, 50, 50);
     cursor: pointer;
+}
+
+#back-orders {
+    width: 10em;
+    border: 2px solid rgb(188, 50, 50);
+    border-radius: 10px;
+    margin-bottom: 3em;
+    
+}
+
+.div-back {
+    display: flex;
+    justify-content: center;
+}
+
+#back-orders:hover {
+    cursor: pointer;
+    background-color: rgb(220, 220, 220);
 }

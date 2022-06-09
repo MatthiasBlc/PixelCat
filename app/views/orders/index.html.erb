@@ -16,7 +16,12 @@
       <h5>Commande n°<%= order.id %></h5>
       <span><b>Prix total :</b> <%= order.total_price %>€</span>
       <span><b>Date :</b> <%= order.date %></span>
-      <i class="fa-solid fa-circle-check fs-4" style="color: green"></i>
+      <div>
+        <i class="fa-solid fa-circle-check fs-4" style="color: green"></i>
+        <%= link_to order_path(order.id) do %>
+          <i class="fa-solid fa-eye fs-4"></i>
+        <% end %>
+      </div>
     </div>
     <hr class="hr-order">
   <% end %>
