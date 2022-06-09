@@ -6,11 +6,10 @@ Rails.application.routes.draw do
     devise_for :users, path: 'mon_compte'
   end
 
-  # scope(path_names: {show: 'article'}) do
-  #   resources :items, only: %i[index show], path: 'article'
-  # end
+  scope(path_names: {show: 'article'}) do
+    resources :items, only: %i[index show], path: 'article'
+  end
 
-  resources :items, only: %i[index show]
 
   resources :carts, path: 'mon_panier'
 
