@@ -387,4 +387,14 @@ footer p {
     color: #666
 }
 
+.fa-eye {
+    margin-left: 0.3em;
+    color: rgb(79, 79, 79)
+}
+
+.fa-eye:hover {
+    color: rgb(188, 50, 50)
+}
+
+
 /* INDEX ORDERS END */
