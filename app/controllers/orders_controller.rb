@@ -1,12 +1,22 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @order = Order.new
+    @total_price = total_cart_price
+    puts "/" * 200
+    puts @total_price
+    puts "/" * 200
+  end
+  
+
+
   def create
     @order = Order.create
 
     @cartlist = params[:cartlist]
     @user = current_user
-    @stripe_amount = params[:total_price]
+    @stripe_amount = @total_price
 
     begin
       @stripe_amount = 0
@@ -65,4 +75,13 @@ class OrdersController < ApplicationController
       cart_item.destroy
     end
   end
+
+  def total_cart_price
+    @total_price = 0
+    current_user.carts.each do |cart_item|
+      @total_price += cart_item.item.price
+    end
+    return @total_price
+  end
+
 end

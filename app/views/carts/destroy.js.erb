@@ -1,4 +1,9 @@
 alert("le fichier JS est exécuté!");
-
-
 document.getElementById("cart").innerHTML = "Mon panier (<%= current_user.carts.size %>)";
+<% id = "cart_#{@cart.id}" %>
+<% @itemprice = @cart.item.price %>
+itemprice = parseFloat(<%= @itemprice%>);
+total_price_update = document.getElementById("totalcartprice");
+total_price_update = parseFloat(total_price_update.innerHTML) - itemprice;
+document.getElementById("<%= id %>").remove();
+document.getElementById("totalcartprice").innerHTML = total_price_update;

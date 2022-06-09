@@ -17,13 +17,13 @@
     </div>
   <% end %>
   <label class="amount">
-    <span>Montant de la commande : <%= params[:total_price] %></span>
+    <span>Montant de la commande : <%= @total_price %></span>
   </label>
 </article>
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-description="Achat d'un produit"
-    data-amount= <%= params[:total_price].to_f * 100 %>
+    data-amount= <%= @total_price.to_f * 100 %>
     data-locale="fr">
 </script>
 <% end %>
