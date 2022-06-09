@@ -9,7 +9,12 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      if current_user.nil?
+        redirect_to root_path
+      elsif current_user.email == 'iris.test@test.fr'
+      else
+        redirect_to root_path
+      end
     end
 
     # Override this value to specify the number of elements to display at a time
