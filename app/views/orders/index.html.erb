@@ -1,15 +1,24 @@
-<!-- JUMBOTRON END -->
-<div class="products-title mt-4">
-  <h2>MES COMMANDES</h2>
-</div>
+<header class="masthead text-center text-white header-bg-fx mb-5">
+  <div class="masthead-content">
+    <div class="container px-5 ">
+      <h1>Mes commandes</h1>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
 <!-- ORDERS-->
-<div>
+<div class="order-section">
   <% @orders.each do |order| %>
+    <div class="order1">
       <h5>Commande n°<%= order.id %></h5>
-    <h5>Prix total : <%= order.total_price %> €</h5>
-    <h6>Date : <%= order.date %></h6>
-    <hr>
-</div>
-<% end %>
+      <span><b>Prix total :</b> <%= order.total_price %>€</span>
+      <span><b>Date :</b> <%= order.date %></span>
+      <i class="fa-solid fa-circle-check fs-4" style="color: green"></i>
+    </div>
+    <hr class="hr-order">
+  <% end %>
 </div>
 <!-- ORDERS END -->
