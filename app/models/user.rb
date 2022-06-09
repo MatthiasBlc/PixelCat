@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true, length: { minimum: 6 }
 
 
-  # after_create :welcome_send
+  after_create :welcome_send
   # comment for the tests
 
   def welcome_send

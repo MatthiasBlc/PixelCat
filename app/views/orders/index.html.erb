@@ -1,0 +1,15 @@
+<!-- JUMBOTRON END -->
+<div class="products-title mt-4">
+  <h2>MES COMMANDES</h2>
+</div>
+<!-- ORDERS-->
+<div>
+  <% @orders.each do |order| %>
+      <h5>Commande n°<%= order.id %></h5>
+    <h5>Prix total : <%= order.total_price %> €</h5>
+    <h6>Date : <%= order.date %></h6>
+    <hr>
+</div>
+<% end %>
+</div>
+<!-- ORDERS END -->
