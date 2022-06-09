@@ -350,5 +350,16 @@ footer p {
 }
 
 .stripe-button-el { 
-    display: none !important; 
+    margin-left: 5.5em;
+    margin-top: 1em;
+}
+
+.under-container_pay {
+    border: 3px solid rgb(34, 153, 232);
+    border-radius: 15px;
+    padding: 2em;
+}
+
+.under-container_pay h2 {
+    margin-bottom: 0.5em;
 }
