@@ -43,10 +43,12 @@
       <% else %>
       <% end %>
     <% end %>
-    <hr class="hr-cart">
-    <div class="total-section">
-      <h6 class="total-cart text-center">Total = <%= @totalcart%>€ </h6>
-      <%= button_to 'Valider le panier', new_order_path, params: {cartlist: @cartlist, total_price: @totalcart} ,method: :get, class: "show-button" %>
-      <div>
-      </div>
+  </div>
+  <hr class="hr-cart">
+  <div class="total-section">
+    <h6 class="total-cart text-center">Total = <%= @totalcart%>€ </h6>
+    <%= button_to 'Valider le panier', new_order_path, params: {cartlist: @cartlist, total_price: @totalcart} ,method: :get, class: "show-button" %>
+    <div>
     </div>
+  </div>
+</div>
