@@ -6,10 +6,9 @@
   <body>
     <h1>Salut <%= @user.first_name %> merci pour ta commande !</h1>
     <p>
-      Ta commande est bien passée.
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+      Pour accéder à ton espace client, connecte-toi <%=link_to('ici', order_url(@order) )%>.
     </p>
-    <p> À très vite sur monsite.fr !
+    <p> À très vite sur PixelCat.fr !
     </p>
   </body>
 </html>
