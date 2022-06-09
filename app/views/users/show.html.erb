@@ -1,49 +1,29 @@
-<div class="d-inline-block mb-4 d-flex align-items-center justify-content-center">
-    <h1 class="text-white text-center border border-white py-3 px-4 position-absolute">Mon Compte</h1>  
-</div>
-
+<header class="masthead text-center text-white header-bg-fx mb-5">
+  <div class="masthead-content">
+    <div class="container px-5 ">
+      <h1>MON PROFIL</h1>
+    </div>
+  </div>
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
 <div class="container">
   <div class="row">
-
-    <div class="col-6">
-      <div class="container">
+    <div class="container-fluid">
       <div class="border mb-5 p-5">
-        <h2 class="h3">Ta fiche de profil :</h2>
-        <hr>
+        <h2 class="h3">Mes informations :</h2>
         <!-- <div class="d-inline-block rounded-circle overflow-auto mb-4" style="height: 200px; width: 200px;"></div> -->
         <ul class="list-group">
-        <li class="list-group-item">
-        Prénom : <%= @user.first_name %>
-        </li>
-        <li class="list-group-item">
-        Nom : <%= @user.first_name %>
-        </li>
-        <li class="list-group-item">
-        Email : <%= @user.email %>
-        </li>
-        <li class="list-group-item">
-        Adresse 1 : <%= @user.address_1 %>
-        </li>
-        <li class="list-group-item">
-        Addresse 2 : <%= @user.address_2 %>
-        </li>
-        <li class="list-group-item">
-        Code Postal : <%= @user.zip_code %>
-        </li>
-        <li class="list-group-item">
-        Ville : <%= @user.city %>
-        </li>
-        
+          <li class="list-group-item">
+            E-mail : <%= @user.email %>
+          </li>
         </ul>
-    <br>
-    <br>
-       
-      
+        <br>
+        <br>
         <%= link_to "Modifier mes informations", edit_user_registration_path(current_user.id), class:"form-btn mt-5" %>
-        </div>
       </div>
     </div>
-      
-    
   </div>
 </div>
