@@ -8,13 +8,6 @@
       nouvelle commande : <%= @order.id %> <br>
       client email :<%= @user.email %><br>
       TTV : <%= @order.total_price %><br>
-      products: <br> 
     </p>
-      <%= @order.items %>
-    <% @order.items.map do |item|%>
-      <p> <%= item.title %> <br>
-        individual price = <%= item.price %> €</p>
-      <hr>
-    <% end %>
   </body>
 </html>

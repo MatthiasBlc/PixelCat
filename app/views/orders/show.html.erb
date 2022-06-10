@@ -25,5 +25,9 @@
 
 </div>
 
-<div class="div-back"><p id="back-orders" class="text-center fs-5">Retour vers mes commandes</p></div>
+<div class="div-back">
+<%= link_to orders_path() do %>
+<p id="back-orders" class="text-center fs-5 ">Retour vers mes commandes</p>
+  <% end %>
+</div>
 

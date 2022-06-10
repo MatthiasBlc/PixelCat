@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "PixelCat_#{Rails.env}"
 
   # Mailer
-  config.action_mailer.default_url_options = { :host => 'pixel-cat-staging.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'pixel-cat.herokuapp.com' }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
